@@ -1,3 +1,5 @@
 High[[:space:]]Stakes[[:space:]]Harvest/Library/PackageCache/com.unity.burst@f7a407abf4d5/.Runtime
 /libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
 High[[:space:]]Stakes[[:space:]]Harvest/Library/PackageCache/com.unity.burst@f7a407abf4d5/.Runtime/libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
+HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a47abf4d5/.Runtime/libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
+HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a407abf4d5/.Runtime/libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
