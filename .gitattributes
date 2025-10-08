@@ -8,3 +8,9 @@ HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a407abf4d5/.Runtime/lib
 *.unity filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.File filter=lfs diff=lfs merge=lfs -text
+# Always use LF for everything except Windows-specific files
+* text eol=lf
+
+# Keep batch and PowerShell scripts Windows-style
+*.bat text eol=crlf
+*.ps1 text eol=crlf
