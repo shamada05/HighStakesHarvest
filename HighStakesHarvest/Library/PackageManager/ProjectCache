@@ -1,25 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: G:/New Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages/manifest.json
+    m_FilePath: C:/Users/camda/OneDrive/Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638947721713514467
-    m_Hash: 1583698468
+      ticks: 638955319302445849
+    m_Hash: 3344464412
   m_LockFileStatus:
-    m_FilePath: G:/New Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages/packages-lock.json
+    m_FilePath: C:/Users/camda/OneDrive/Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638947721850114293
-    m_Hash: 1099378839
+      ticks: 638955319302490850
+    m_Hash: 1503147037
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: G:/New Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages
+m_ProjectPath: C:/Users/camda/OneDrive/Documents/GitHub/HighStakesHarvest/HighStakesHarvest/Packages
 m_EditorVersion: 6000.0.58f1 (44b8bf3a3225)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.9.3
@@ -27,7 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.9.3
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.collab-proxy@ab839cc7d2ad
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.collab-proxy@ab839cc7d2ad
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -202,7 +202,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.1
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.feature.2d@dd1ea8910f12
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.feature.2d@dd1ea8910f12
   assetPath: Packages/com.unity.feature.2d
   name: com.unity.feature.2d
   displayName: 2D
@@ -340,12 +340,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.ide.rider@3.0.37
+- packageId: com.unity.ide.rider@3.0.38
   testable: 0
   isDirectDependency: 1
-  version: 3.0.37
+  version: 3.0.38
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ide.rider@0baf0f91edc0
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ide.rider@1f60b3138684
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -437,13 +437,13 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638929118109900000
+  datePublishedTicks: 638938045127600000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: 39f00cc44029286564f951484a56b488a35df36d
+    revision: 8a49d81ce92f334a07e3b71a8847b2f60dc12287
     path: 
   unityLifecycle:
     version: 3.0.37
@@ -451,18 +451,16 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-  isDeprecated: 1
-  deprecationMessage: '3.3.0.37 has a regression: newly created C# files are not
-    added in the project'
+  isDeprecated: 0
+  deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"- Automatic update generated projects, when Roslyn
-    AdditionalFiles are changed\n- Remove .editorconfig from distributed package
-    to not prevent hiding warnings with a top user .editorconfig"}'
+  upmReserved: '{"changelog":"- fix a regression, introduced in 3.0.37. New files
+    are not added in the project."}'
   assetStore:
     productId: 
-  fingerprint: 0baf0f91edc004d6f71bbd74a38e2503a5f1228b
+  fingerprint: 1f60b3138684c97af67aa8d911b1632ba916d29d
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 3.0.37
@@ -478,7 +476,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.23
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -519,9 +517,11 @@ m_ResolvedPackages:
     - 2.0.21
     - 2.0.22
     - 2.0.23
+    - 2.0.25
     compatible:
     - 2.0.23
-    recommended: 2.0.23
+    - 2.0.25
+    recommended: 2.0.25
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -593,7 +593,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.14.2
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -665,8 +665,10 @@ m_ResolvedPackages:
     - 1.14.0
     - 1.14.1
     - 1.14.2
+    - 1.15.0
     compatible:
     - 1.14.2
+    - 1.15.0
     recommended: 1.14.2
     deprecated: []
   dependencies:
@@ -748,7 +750,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -841,7 +843,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 17.0.4
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.universal@e1fa89d1f997
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.universal@e1fa89d1f997
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal Render Pipeline
@@ -967,7 +969,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.5.1
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.test-framework@1f954279c37e
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.test-framework@1f954279c37e
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1056,7 +1058,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.9
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.timeline@6b9e48457ddb
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.timeline@6b9e48457ddb
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1253,7 +1255,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ugui@aa507f3228f0
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ugui@aa507f3228f0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -1348,7 +1350,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.7
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.visualscripting@6279e2b7c485
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.visualscripting@6279e2b7c485
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -4207,7 +4209,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ext.nunit@031a54704bff
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.ext.nunit@031a54704bff
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -4286,7 +4288,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.4
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.core@05f02f04fe74
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.core@05f02f04fe74
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Scriptable Render Pipeline Core
@@ -4411,7 +4413,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.4
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.shadergraph@7ccd16edcc88
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.shadergraph@7ccd16edcc88
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -4526,7 +4528,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.3
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.universal-config@dd206bf35d04
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.render-pipelines.universal-config@dd206bf35d04
   assetPath: Packages/com.unity.render-pipelines.universal-config
   name: com.unity.render-pipelines.universal-config
   displayName: Universal Render Pipeline Config
@@ -4633,7 +4635,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 10.2.1
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.animation@81ad133dbdf1
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.animation@81ad133dbdf1
   assetPath: Packages/com.unity.2d.animation
   name: com.unity.2d.animation
   displayName: 2D Animation
@@ -4900,7 +4902,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 5.0.3
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.pixel-perfect@e3ae982b672d
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.pixel-perfect@e3ae982b672d
   assetPath: Packages/com.unity.2d.pixel-perfect
   name: com.unity.2d.pixel-perfect
   displayName: 2D Pixel Perfect
@@ -5008,7 +5010,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 9.1.0
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.psdimporter@e0ffc26deb40
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.psdimporter@e0ffc26deb40
   assetPath: Packages/com.unity.2d.psdimporter
   name: com.unity.2d.psdimporter
   displayName: 2D PSD Importer
@@ -5209,7 +5211,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.sprite@897b7eecf04e
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.sprite@897b7eecf04e
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -5288,7 +5290,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 10.0.7
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.spriteshape@9e35352ae135
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.spriteshape@9e35352ae135
   assetPath: Packages/com.unity.2d.spriteshape
   name: com.unity.2d.spriteshape
   displayName: 2D SpriteShape
@@ -5498,7 +5500,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.tilemap@b1f6833cdf82
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.tilemap@b1f6833cdf82
   assetPath: Packages/com.unity.2d.tilemap
   name: com.unity.2d.tilemap
   displayName: 2D Tilemap Editor
@@ -5594,7 +5596,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.1.0
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.tilemap.extras@13634da7dbe0
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.tilemap.extras@13634da7dbe0
   assetPath: Packages/com.unity.2d.tilemap.extras
   name: com.unity.2d.tilemap.extras
   displayName: 2D Tilemap Extras
@@ -5753,7 +5755,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.10
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.aseprite@dba7c65ef731
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.aseprite@dba7c65ef731
   assetPath: Packages/com.unity.2d.aseprite
   name: com.unity.2d.aseprite
   displayName: 2D Aseprite Importer
@@ -5889,7 +5891,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.3
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.searcher@1e17ce91558d
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.searcher@1e17ce91558d
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -5985,7 +5987,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.8.24
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.burst@f7a407abf4d5
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.burst@f7a407abf4d5
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -6219,7 +6221,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.2
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.mathematics@8017b507cc74
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.mathematics@8017b507cc74
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -6253,9 +6255,11 @@ m_ResolvedPackages:
     - 1.2.6
     - 1.3.1
     - 1.3.2
+    - 1.3.3
     compatible:
     - 1.3.2
-    recommended: 1.3.2
+    - 1.3.3
+    recommended: 1.3.3
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -6317,7 +6321,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.5.1
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.collections@56bff8827a7e
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.collections@56bff8827a7e
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -6409,6 +6413,7 @@ m_ResolvedPackages:
     - 2.6.0-exp.2
     - 2.6.0-pre.3
     - 2.6.0-pre.4
+    - 2.6.2
     compatible:
     - 2.5.1
     - 2.5.2
@@ -6417,6 +6422,7 @@ m_ResolvedPackages:
     - 2.6.0-exp.2
     - 2.6.0-pre.3
     - 2.6.0-pre.4
+    - 2.6.2
     recommended: 2.5.7
     deprecated: []
   dependencies:
@@ -6505,7 +6511,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 2
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.rendering.light-transport@9bd588f963c0
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.rendering.light-transport@9bd588f963c0
   assetPath: Packages/com.unity.rendering.light-transport
   name: com.unity.rendering.light-transport
   displayName: Unity Light Transport Library
@@ -6610,7 +6616,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 9.1.1
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.common@bc041c6e0d0d
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.2d.common@bc041c6e0d0d
   assetPath: Packages/com.unity.2d.common
   name: com.unity.2d.common
   displayName: 2D Common
@@ -6785,7 +6791,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.4
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -6815,10 +6821,12 @@ m_ResolvedPackages:
     - 1.10.2
     - 1.11.4
     - 1.11.5
+    - 1.11.6
     compatible:
     - 1.11.4
     - 1.11.5
-    recommended: 1.11.5
+    - 1.11.6
+    recommended: 1.11.6
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -6876,7 +6884,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.1.0
   source: 1
-  resolvedPath: G:\New Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.test-framework.performance@92d1d09a72ed
+  resolvedPath: C:\Users\camda\OneDrive\Documents\GitHub\HighStakesHarvest\HighStakesHarvest\Library\PackageCache\com.unity.test-framework.performance@92d1d09a72ed
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API
