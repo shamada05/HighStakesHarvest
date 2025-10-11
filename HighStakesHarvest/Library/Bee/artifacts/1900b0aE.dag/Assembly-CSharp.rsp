@@ -449,7 +449,8 @@
 "Assets/Cainos/Pixel Art Top Down - Basic/Script/SpriteColorAnimation.cs"
 "Assets/Cainos/Pixel Art Top Down - Basic/Script/StairsLayerTrigger.cs"
 "Assets/Cainos/Pixel Art Top Down - Basic/Script/TopDownCharacterController.cs"
-"Assets/PlayerActions/PlayerMovement.cs"
+"Assets/PlayerActions/Scripts/PlayerMovement.cs"
+"Assets/PlayerActions/Scripts/TileManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+
