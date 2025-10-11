@@ -28,13 +28,13 @@
       "source": "builtin",
       "testable": false
     },
-    "com.unity.ide.rider@3.0.37": {
+    "com.unity.ide.rider@3.0.38": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "G:\\New Documents\\GitHub\\HighStakesHarvest\\HighStakesHarvest\\Library\\PackageCache\\com.unity.ide.rider@0baf0f91edc0",
-      "fingerprint": "0baf0f91edc004d6f71bbd74a38e2503a5f1228b",
+      "resolvedPath": "G:\\New Documents\\GitHub\\HighStakesHarvest\\HighStakesHarvest\\Library\\PackageCache\\com.unity.ide.rider@1f60b3138684",
+      "fingerprint": "1f60b3138684c97af67aa8d911b1632ba916d29d",
       "editorCompatibility": "2021.3.0a1",
-      "version": "3.0.37",
+      "version": "3.0.38",
       "source": "registry",
       "testable": false
     },

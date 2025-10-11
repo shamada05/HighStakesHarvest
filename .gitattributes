@@ -5,3 +5,4 @@ HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a47abf4d5/.Runtime/libb
 HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a4
 07abf4d5/.Runtime/libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
 HighStakesHarvest/Library/PackageCache/com.unity.burst@f7a407abf4d5/.Runtime/libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
+HighStakesHarvest/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
