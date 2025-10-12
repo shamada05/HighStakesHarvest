@@ -3,16 +3,6 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
-HighStakesHarvest/library/
-Library/ArtifactDB
-Library\ArtifactDB
-ArtifactDB
-\ArtifactDB
-/ArtifactDB
-*ArtifactDB
-/Library
-/[Bb]uilds/
-/[Ll]ogs/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
