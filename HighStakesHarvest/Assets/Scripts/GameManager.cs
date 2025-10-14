@@ -1,3 +1,4 @@
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public TurnManager turnManager;
+    public ToolsManager toolManager;
 
     //public UIManager uiManager;
     //public PlayerManager playerManager;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
         if (turnManager == null)
             turnManager = GetComponentInChildren<TurnManager>();
 
+        if (toolManager == null)
+            toolManager = GetComponentInChildren<ToolsManager>();
         //if (uiManager == null)
         //    uiManager = GetComponentInChildren<UIManager>();
 

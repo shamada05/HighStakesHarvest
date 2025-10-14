@@ -7,53 +7,75 @@ public class PlantPlacer : MonoBehaviour
     public GameObject Potato;      // assign your crop prefabs here
     public GameObject Blueberry;
     public GameObject Pumpkin;
-    public int selector = 0;
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetMouseButtonDown(0))
         {
-            selector = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            selector = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            selector = 3;
-        }
-        if (Input.GetMouseButtonDown(0)) // Left-click
-        {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPosition = soilTilemap.WorldToCell(mouseWorldPos);
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int cellPos = soilTilemap.WorldToCell(worldPos);
+            Vector3 placePos = soilTilemap.GetCellCenterWorld(cellPos);
 
-
-            Vector3 placePosition = soilTilemap.GetCellCenterWorld(cellPosition);
-
-            // Check if there's already a crop there (optional)
-            Collider2D hit = Physics2D.OverlapPoint(placePosition);
-            if (hit == null)
+            switch (ToolsManager.Instance.currentAction)
             {
-                if (selector == 1)
-                {
-                    Instantiate(Potato, placePosition, Quaternion.identity);
-                    Debug.Log("Crop planted at " + cellPosition);
-                }
-                if (selector == 2)
-                {
-                    Instantiate(Blueberry, placePosition, Quaternion.identity);
-                    Debug.Log("Crop planted at " + cellPosition);
-                }
-                if (selector == 3)
-                {
-                    Instantiate(Pumpkin, placePosition, Quaternion.identity);
-                    Debug.Log("Crop planted at " + cellPosition);
-                }
+                case PlayerAction.Plant1:
+                    TryPlantPotato(placePos);
+                    break;
+
+                case PlayerAction.Plant2:
+                    TryPlantBlueberry(placePos);
+                    break;
+
+                case PlayerAction.Plant3:
+                    TryPlantPumpkin(placePos);
+                    break;
+
+                case PlayerAction.Water:
+                    TryWater(placePos);
+                    break;
             }
-            else
+        }
+    }
+
+    void TryPlantPotato(Vector3 placePos)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(placePos);
+        if (hit == null)
+        {
+            Instantiate(Potato, placePos, Quaternion.identity);
+            Debug.Log("Planted Potato seed at " + placePos);
+        }
+    }
+
+    void TryPlantBlueberry(Vector3 placePos)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(placePos);
+        if (hit == null)
+        {
+            Instantiate(Blueberry, placePos, Quaternion.identity);
+            Debug.Log("Planted Blueberry seed at " + placePos);
+        }
+    }
+
+    void TryPlantPumpkin(Vector3 placePos)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(placePos);
+        if (hit == null)
+        {
+            Instantiate(Pumpkin, placePos, Quaternion.identity);
+            Debug.Log("Planted Pumkin seed at " + placePos);
+        }
+    }
+
+    void TryWater(Vector3 placePos)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(placePos);
+        if (hit != null)
+        {
+            Plant plant = hit.GetComponent<Plant>();
+            if (plant != null)
             {
-                Debug.Log("Tile already occupied!");
+                plant.Water();
+                Debug.Log("Watered plant at " + placePos);
             }
         }
     }
