@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 219962849}
   - component: {fileID: 219962848}
   m_Layer: 5
-  m_Name: Shop Button Outline
+  m_Name: Quit Game Button Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Turn
+  m_text: To Farm
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c6004890b4ecc4488b434c9a6507933, type: 2}
   m_sharedMaterial: {fileID: -7489765113027175155, guid: 4c6004890b4ecc4488b434c9a6507933,
@@ -508,8 +508,9 @@ GameObject:
   - component: {fileID: 604733380}
   - component: {fileID: 604733379}
   - component: {fileID: 604733378}
+  - component: {fileID: 604733381}
   m_Layer: 5
-  m_Name: Shop Button
+  m_Name: Quit Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: 4.13}
+  m_AnchoredPosition: {x: -297.69, y: 4.13}
   m_SizeDelta: {x: 242.61, y: 116.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604733378
@@ -619,6 +620,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604733376}
   m_CullTransparentMesh: 1
+--- !u!114 &604733381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604733376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441ccc21f5a7c1746a3b0fad545ea12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663745680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1220,7 @@ GameObject:
   - component: {fileID: 1651097065}
   - component: {fileID: 1651097064}
   m_Layer: 5
-  m_Name: Next Turn Button Outline
+  m_Name: To Farm Button Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,7 +1341,7 @@ GameObject:
   - component: {fileID: 1721071304}
   - component: {fileID: 1721071307}
   m_Layer: 5
-  m_Name: Next Turn Button
+  m_Name: To Farm Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1507,7 +1520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shop
+  m_text: Quit Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c6004890b4ecc4488b434c9a6507933, type: 2}
   m_sharedMaterial: {fileID: -7489765113027175155, guid: 4c6004890b4ecc4488b434c9a6507933,
