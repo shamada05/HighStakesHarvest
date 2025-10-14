@@ -25,9 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -42,22 +42,13 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 1815538943
+    uniqueID: 2425651459
     locked: 0
-  - name: Table
-    uniqueID: 3094645739
+  - name: Layer 2
+    uniqueID: 4250941897
     locked: 0
-  - name: Dealer
-    uniqueID: 1563044425
-    locked: 0
-  - name: cards
-    uniqueID: 2302283775
-    locked: 0
-  - name: chips
-    uniqueID: 3658202013
-    locked: 0
-  - name: outcome
-    uniqueID: 2126369227
+  - name: Layer 3
+    uniqueID: 4189426099
     locked: 0
   m_RenderingLayers:
   - Default
