@@ -23,6 +23,6 @@ public class GoToFarmScene : MonoBehaviour
     void OnButtonClick()
     {
         // Load the Farm Scene
-        SceneManager.LoadScene("Farm Scene");
+        SceneManager.LoadScene("FarmScene");
     }
 }

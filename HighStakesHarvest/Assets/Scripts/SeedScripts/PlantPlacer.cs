@@ -32,6 +32,10 @@ public class PlantPlacer : MonoBehaviour
                 case PlayerAction.Water:
                     TryWater(placePos);
                     break;
+
+                case PlayerAction.Harvest:
+                    TryHarvest(placePos);
+                    break;
             }
         }
     }
@@ -76,6 +80,27 @@ public class PlantPlacer : MonoBehaviour
             {
                 plant.Water();
                 Debug.Log("Watered plant at " + placePos);
+            }
+        }
+    }
+
+    void TryHarvest(Vector3 placePos)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(placePos);
+        if (hit != null)
+        {
+            Plant plant = hit.GetComponent<Plant>();
+            if (plant != null)
+            {
+                if (plant.IsFullyGrown())
+                {
+                    Destroy(plant.gameObject);
+                    Debug.Log("Harvested plant at " + placePos);
+                }
+                else
+                {
+                    Debug.Log("Plant is not fully grown at " + placePos);
+                }
             }
         }
     }
