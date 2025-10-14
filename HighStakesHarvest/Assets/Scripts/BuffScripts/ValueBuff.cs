@@ -4,20 +4,31 @@ using UnityEngine;
 public class ValueBuff : ScriptableBuff
 {
     public float ValueModifier = 1.1f; // 10% increase
-    public override void Apply(GameObject target)
+    public string seedToBuff = "Potato";
+    public override void Apply(GameObject target) // target is actually plants manager
     {
 
-        // Assuming a PlayerMovement component exists
-       SeedData seedData = target.GetComponent<SeedData>();
+        foreach (Transform child in target.transform)
+        {
+            
+            Plant plant = child.GetComponent<Plant>();
 
-        if (seedData != null)
-        {
-            //seedData.ApplyValueBuff(ValueModifier);
-            Debug.Log($"{target.name} received Value Buff!");
-        }
-        else
-        {
-            Debug.Log($"{target.name} value not found");
+            if (plant != null)
+            {
+                SeedData seedData = plant.seedData;
+                if (seedData.name != seedToBuff) { 
+                    Debug.Log($"{seedData.name} currently does not match seedToBuff");
+                    continue; 
+                }
+
+                seedData.ApplyValueBuff(ValueModifier);
+                Debug.Log($"{seedData.name} received Value Buff!");
+            }
+            else
+            {
+                Debug.Log($"{target.name} value not found");
+            }
+
         }
     }
 

@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput; 
 
-    // testing
+    /************** testing buffs temporarily **************
     public PlayerBuffManager playerBuffManager;
+    public CropBuffManager cropBuffManager;
     public SpeedBuff speedBuff;
+    public ValueBuff valueBuff;
+    *********************************************************/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,10 +29,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // adds keybinds for buff testing
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerBuffManager.AddBuff(speedBuff);
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            cropBuffManager.AddBuff(valueBuff);
+        }*/
 
         rb.linearVelocity = moveInput * currentSpeed; 
         

@@ -13,8 +13,7 @@ public class CropBuffManager : MonoBehaviour
         if (!activeBuffs.Contains(buff))
         {
             activeBuffs.Add(buff);
-            //buff.Apply(transform.parent.gameObject);
-            buff.Apply(gameObject);
+            buff.Apply(transform.parent.gameObject);
             Debug.Log($"Buff '{buff.BuffName}' added to {gameObject.name}.");
         }
         else

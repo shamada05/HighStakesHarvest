@@ -7,6 +7,7 @@ public class PlantPlacer : MonoBehaviour
     public GameObject Potato;      // assign your crop prefabs here
     public GameObject Blueberry;
     public GameObject Pumpkin;
+
     public int selector = 0;
 
     void Update()
