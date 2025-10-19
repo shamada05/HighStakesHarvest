@@ -23,9 +23,32 @@ public class CropManager : MonoBehaviour
     }
     void setDebugDictionaryValues()
     {
+        // name, plural vers, value, growth, quantity, type
         cropInfoDictionary.Add("Potato", new CropInfo("Potato", "Potatoes", 10, 3, 3, "Vegetable"));
         cropInfoDictionary.Add("Blueberry", new CropInfo("Blueberry", "Blueberries", 5, 3, 6, "Fruit"));
-        cropInfoDictionary.Add("Pumpkin", new CropInfo("Pumpkin", "Pumpkins", 1, 3, 15, "Fruit"));
+        cropInfoDictionary.Add("Pumpkin", new CropInfo("Pumpkin", "Pumpkins", 15, 3, 1, "Fruit"));
+    }
+
+    // getters
+
+    CropInfo getCropInfo(string name)
+    {
+        return cropInfoDictionary[name];
+    }
+
+    int getCropValue(string name)
+    {
+        return cropInfoDictionary[name].value;
+    }
+
+    int getCropGrowth(string name)
+    {
+        return cropInfoDictionary[name].growth;
+    }
+
+    int getCropQuantity(string name)
+    {
+        return cropInfoDictionary[name].quantity;
     }
 
     void ApplySpecificValueBuff(CropInfo crop, float modifier)

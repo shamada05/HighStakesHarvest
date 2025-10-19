@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
 
+// Class that stores the information of a crop.
+
 [Serializable]
 public class CropInfo
 {
