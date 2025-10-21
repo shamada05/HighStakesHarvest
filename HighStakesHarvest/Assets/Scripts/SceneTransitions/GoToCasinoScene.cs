@@ -22,7 +22,27 @@ public class GoToCasinoScene : MonoBehaviour
 
     void OnButtonClick()
     {
+        // use SceneLoaded to check when the scene is loaded
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         // Load the CasinoScene
         SceneManager.LoadScene("CasinoScene");
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Only run EndTurn when we've loaded the CasinoScene
+        if (scene.name == "CasinoScene")
+        {
+            if (TurnManager.Instance != null)
+                TurnManager.Instance.EndTurn();
+
+            else
+                Debug.LogWarning("TurnManager.Instance is null when scene loaded.");
+            
+
+            // Unsubscribe so we don't call EndTurn again for future loads
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 }
