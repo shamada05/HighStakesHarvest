@@ -24,7 +24,6 @@ public class BlackJackGameManager : MonoBehaviour
     private int pot = 0;
     private bool playerHasStood = false;
     private bool roundEnded = false;
-
     private void Start()
     {
         // Remove all previous listeners
@@ -91,8 +90,6 @@ public class BlackJackGameManager : MonoBehaviour
         hit.gameObject.SetActive(false);
         stand.gameObject.SetActive(false);
 
-        if (hideCard != null)
-            hideCard.SetActive(false);
 
         StartCoroutine(DealerTurn());
     }
@@ -100,31 +97,78 @@ public class BlackJackGameManager : MonoBehaviour
     // Dealer plays automatically
     private IEnumerator DealerTurn()
     {
+        // Reveal the dealer's hidden card
+        if (hideCard != null)
+            hideCard.SetActive(false);
+
         DealerText.gameObject.SetActive(true);
 
-        while (dealerscript.handValue < 16 && dealerscript.cardIndex < dealerscript.hand.Length)
+        // Give a moment to see the revealed card
+        yield return new WaitForSeconds(.5f);
+
+        // If player busted, dealer doesn't need to draw
+        if (playerscript.handValue > 21)
+        {
+            DetermineRoundOutcome();  // Remove roundEnded = true from here
+            yield break;
+        }
+
+        // Dealer draws until 17 or higher
+        while (dealerscript.handValue < 17 && dealerscript.cardIndex < dealerscript.hand.Length)
         {
             dealerscript.HitOneCard();
             UpdateUI();
-            yield return new WaitForSeconds(1.5f); // small delay to see cards
+            yield return new WaitForSeconds(.5f);
         }
 
-        roundEnded = true;
-        DetermineRoundOutcome();
+        // Add delay after dealer finishes drawing before showing result
+        yield return new WaitForSeconds(.5f);
+
+        DetermineRoundOutcome();  // Remove roundEnded = true from here too
     }
 
     private void CheckBlackjack()
     {
-        // If anyone has 21 at the start
-        if (playerscript.handValue == 21 || dealerscript.handValue == 21)
+        // Only end immediately if DEALER has blackjack
+        if (dealerscript.handValue == 21)
         {
             playerHasStood = true;
-            StartCoroutine(DealerTurn());
+            hit.gameObject.SetActive(false);
+            stand.gameObject.SetActive(false);
+            StartCoroutine(DealerTurnAfterBlackjack());
         }
+        // If only player has blackjack, they can't hit anyway (already at 21)
+        // but let them click stand to see the result
+        else if (playerscript.handValue == 21)
+        {
+            // Player has blackjack but dealer doesn't
+            // Disable hit (can't improve on 21) but leave stand active
+            hit.gameObject.SetActive(false);
+            // Player must click stand to proceed
+        }
+    }
+
+    private IEnumerator DealerTurnAfterBlackjack()
+    {
+        yield return new WaitForSeconds(.5f); // Show the blackjack for 2 seconds
+        StartCoroutine(DealerTurn());
+    }
+    private IEnumerator DealerTurnWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(DealerTurn());
     }
 
     private void DetermineRoundOutcome()
     {
+        StartCoroutine(ShowOutcomeWithDelay());
+    }
+
+    private IEnumerator ShowOutcomeWithDelay()
+    {
+        // Delay before showing any outcome screen
+        yield return new WaitForSeconds(1.5f);
+
         bool playerBust = playerscript.handValue > 21;
         bool dealerBust = dealerscript.handValue > 21;
 
@@ -149,6 +193,10 @@ public class BlackJackGameManager : MonoBehaviour
 
         roundEnded = true;
     }
+    private bool IsBlackjack(PlayerScript player)
+    {
+        return player.handValue == 21 && player.cardIndex == 2;
+    }
 
     private void UpdateUI()
     {
@@ -168,6 +216,6 @@ public class BlackJackGameManager : MonoBehaviour
         DrawScreen.SetActive(false);
 
         if (hideCard != null)
-            hideCard.GetComponent<Renderer>().enabled = false;
+            hideCard.SetActive(false);
     }
 }
