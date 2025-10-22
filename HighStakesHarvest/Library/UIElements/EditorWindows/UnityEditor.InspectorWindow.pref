@@ -21,7 +21,19 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-growthStages__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-growthStages__unity-vertical-collection-scroll-view__UnityEngine.UIElements.ScrollView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-growthStages__unity-vertical-collection-scroll-view__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-hand__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-hand__unity-vertical-collection-scroll-view__UnityEngine.UIElements.ScrollView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-hand__unity-vertical-collection-scroll-view__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-cardSprites__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-cardSprites__unity-vertical-collection-scroll-view__UnityEngine.UIElements.ScrollView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-cardSprites__unity-vertical-collection-scroll-view__Slider__UnityEngine.UIElements.Scroller+ScrollerSlider
   m_Values:
+  - '{}'
+  - '{}'
+  - '{}'
+  - '{}'
+  - '{}'
+  - '{}'
   - '{}'
   - '{}'
   - '{}'

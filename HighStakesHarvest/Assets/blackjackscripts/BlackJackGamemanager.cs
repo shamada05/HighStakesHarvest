@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameManager : MonoBehaviour
+public class BlackJackGameManager : MonoBehaviour
 {
     public Button deal;
     public Button hit;
