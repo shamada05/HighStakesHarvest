@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public TurnManager turnManager;
     public ToolsManager toolManager;
+    public CropManager cropManager;
 
     //public UIManager uiManager;
     //public PlayerManager playerManager;
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
 
         if (toolManager == null)
             toolManager = GetComponentInChildren<ToolsManager>();
+
+        if(cropManager == null)
+            cropManager = GetComponentInChildren<CropManager>();    
         //if (uiManager == null)
         //    uiManager = GetComponentInChildren<UIManager>();
 
