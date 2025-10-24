@@ -45,7 +45,16 @@ public class PlantPlacer : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(placePos);
         if (hit == null)
         {
-            Instantiate(Potato, placePos, Quaternion.identity);
+            GameObject go = Instantiate(Potato, placePos, Quaternion.identity);
+            if (PlantManager.Instance != null)
+            {
+                PlantManager.Instance.AddPlant(go);
+            }
+            else
+            {
+                DontDestroyOnLoad(go);
+            }
+
             Debug.Log("Planted Potato seed at " + placePos);
         }
     }
@@ -55,7 +64,16 @@ public class PlantPlacer : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(placePos);
         if (hit == null)
         {
-            Instantiate(Blueberry, placePos, Quaternion.identity);
+            GameObject go = Instantiate(Blueberry, placePos, Quaternion.identity);
+            if (PlantManager.Instance != null)
+            {
+                PlantManager.Instance.AddPlant(go);
+            }
+            else
+            {
+                DontDestroyOnLoad(go);
+            }
+
             Debug.Log("Planted Blueberry seed at " + placePos);
         }
     }
@@ -65,7 +83,16 @@ public class PlantPlacer : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(placePos);
         if (hit == null)
         {
-            Instantiate(Pumpkin, placePos, Quaternion.identity);
+            GameObject go = Instantiate(Pumpkin, placePos, Quaternion.identity);
+            if (PlantManager.Instance != null)
+            {
+                PlantManager.Instance.AddPlant(go);
+            }
+            else
+            {
+                DontDestroyOnLoad(go);
+            }
+
             Debug.Log("Planted Pumkin seed at " + placePos);
         }
     }
@@ -94,6 +121,9 @@ public class PlantPlacer : MonoBehaviour
             {
                 if (plant.IsFullyGrown())
                 {
+                    if (PlantManager.Instance != null)
+                        PlantManager.Instance.RemovePlant(plant.gameObject);
+
                     Destroy(plant.gameObject);
                     Debug.Log("Harvested plant at " + placePos);
                 }
