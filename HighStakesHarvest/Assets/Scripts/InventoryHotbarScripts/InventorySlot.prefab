@@ -170,7 +170,7 @@ MonoBehaviour:
   quantityText: {fileID: 9150001827531289287}
   normalColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   hotbarColor: {r: 0.8627451, g: 0.78431374, b: 0.7058824, a: 1}
-  emptyColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.9019608}
+  emptyColor: {r: 0.2952128, g: 0.38679248, b: 0.129539, a: 0.9019608}
 --- !u!1 &6987199070195819170
 GameObject:
   m_ObjectHideFlags: 0
