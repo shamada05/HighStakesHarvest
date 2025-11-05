@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8209806621330750431}
   - component: {fileID: 6145434659437749106}
   - component: {fileID: 4896422454342845093}
+  - component: {fileID: 665783113971945679}
   m_Layer: 5
   m_Name: Options Button Outline
   m_TagString: Untagged
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &665783113971945679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148208234775514667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb49d68a25e2cb74db8144d745b4fbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsMenuPrefab: {fileID: 3163153395028200860, guid: 5fd8955f0fcaa23418fe8cdf5a30365c,
+    type: 3}
 --- !u!1 &253768171663005367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1175,7 @@ GameObject:
   - component: {fileID: 4331482242888239183}
   - component: {fileID: 7144599358243166047}
   - component: {fileID: 7130563390518633470}
+  - component: {fileID: 263039349451472485}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -1270,7 +1286,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7144599358243166047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263039349451472485}
+        m_TargetAssemblyTypeName: OptionsMenuOpener, Assembly-CSharp
+        m_MethodName: OpenOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &263039349451472485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492595557703545091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb49d68a25e2cb74db8144d745b4fbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsMenuPrefab: {fileID: 3163153395028200860, guid: 5fd8955f0fcaa23418fe8cdf5a30365c,
+    type: 3}
 --- !u!1 &8879349114800815969
 GameObject:
   m_ObjectHideFlags: 0

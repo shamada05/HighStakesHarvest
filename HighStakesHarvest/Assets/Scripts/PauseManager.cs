@@ -36,7 +36,8 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            // Use the actual pause menu instance active state
+            if (pauseMenuInstance != null && pauseMenuInstance.activeSelf)
                 Resume();
             else
                 Pause();
@@ -98,4 +99,18 @@ public class PauseManager : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
+
+    public GameObject GetCurrentPauseMenu()
+    {
+        return pauseMenuInstance;
+    }
+
+    public void ShowPauseMenu()
+    {
+        if (pauseMenuInstance != null)
+        {
+            pauseMenuInstance.SetActive(true);
+        }
+    }
+
 }
