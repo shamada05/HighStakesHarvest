@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 2438445963864632423}
   - component: {fileID: 1582337844480924874}
   - component: {fileID: 7471047829353624835}
+  - component: {fileID: 7913143234711221067}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -577,6 +578,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7533b7526aed314eb014058df24c697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 7973509822380877108}
+  volumeText: {fileID: 8303773417759952778}
+--- !u!114 &7913143234711221067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163153395028200860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb516975c5ceca42919c8109c0004b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 7973509822380877108}

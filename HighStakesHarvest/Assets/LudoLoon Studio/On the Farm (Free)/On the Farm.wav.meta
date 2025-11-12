@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: d08ebcf05a5e3d737a292577fc84fb87
+AssetOrigin:
+  serializedVersion: 1
+  productId: 221746
+  packageName: On the Farm (Free Music)
+  packageVersion: 1.0
+  assetPath: Assets/LudoLoon Studio/On the Farm (Free)/On the Farm.wav
+  uploadId: 500352
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 8
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 2
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 1
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
