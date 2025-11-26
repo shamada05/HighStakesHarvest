@@ -11,8 +11,8 @@ public class VolumeSliderLinker : MonoBehaviour
     {
         if (volumeSlider != null)
         {
-            // Initialize to current volume from MusicManager
-            float currentVolume = MusicManager.Instance != null ? MusicManager.Instance.GetVolume() : 0.5f;
+            // Initialize to current volume from AudioManager
+            float currentVolume = AudioManager.Instance != null ? AudioManager.Instance.GetVolume() : 0.5f;
             volumeSlider.value = currentVolume;
             UpdateVolumeText(currentVolume);
 
@@ -22,8 +22,8 @@ public class VolumeSliderLinker : MonoBehaviour
 
     private void OnVolumeChanged(float value)
     {
-        if (MusicManager.Instance != null)
-            MusicManager.Instance.SetVolume(value);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.SetVolume(value);
 
         UpdateVolumeText(value);
     }
