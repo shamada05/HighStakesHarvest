@@ -13,6 +13,7 @@ public class SaveData
     public int savedQuotaIndex = 0;
     public int savedTurnsRemaining = 0;
     public int savedMoney = 0;
+    public int savedStartingMoneyForQuota = 0;
     public string inventoryJson = "";
 }
 
@@ -117,6 +118,32 @@ public class SaveManager : MonoBehaviour
         {
             Debug.LogWarning("[SaveManager] PlayerInventory not found in scene during load.");
         }
+
+        if (QuotaManager.Instance != null)
+        {
+            QuotaManager.Instance.RestoreQuotaState(
+                data.savedQuotaIndex,
+                data.savedTurnsRemaining,
+                data.savedStartingMoneyForQuota
+            );
+
+            Debug.Log("[SaveManager] Quota restored: index=" + data.savedQuotaIndex +
+                      " turns=" + data.savedTurnsRemaining +
+                      " startMoney=" + data.savedStartingMoneyForQuota);
+        }
+
+        // --- Load Money ---
+        if (MoneyManager.Instance != null)
+        {
+            MoneyManager.Instance.SetMoney(data.savedMoney);
+            Debug.Log("[SaveManager] Money restored: " + data.savedMoney);
+        }
+        else
+        {
+            Debug.LogWarning("[SaveManager] MoneyManager not loaded yet.");
+        }
+
+
     }
 
 
@@ -231,14 +258,31 @@ public class SaveManager : MonoBehaviour
 
     private IEnumerator LoadRunDelayed(int quotaIndex, int turns, int money)
     {
-        yield return new WaitForSeconds(0.1f); // wait for managers to exist
+        // --- Wait until MoneyManager exists ---
+        while (MoneyManager.Instance == null)
+            yield return null;
 
+        // Apply saved money after MoneyManager initialized
         MoneyManager.Instance.SetMoney(money);
 
-        QuotaManager.Instance.StartQuota(quotaIndex);
-        QuotaManager.Instance.AddTurns(turns - QuotaManager.Instance.GetTurnsRemaining());
+        // --- Wait until QuotaManager exists ---
+        while (QuotaManager.Instance == null)
+            yield return null;
+
+        // Now safely restore quota data
+        QuotaManager.Instance.RestoreQuotaState(
+            quotaIndex,
+            turns,
+            SaveManager.Instance.data.savedStartingMoneyForQuota
+        );
 
         Debug.Log("[MainMenu] Loaded saved quota/turn progress.");
+    }
+
+
+    public int GetStartingMoney()
+    {
+        return data.savedStartingMoneyForQuota;
     }
 
 }

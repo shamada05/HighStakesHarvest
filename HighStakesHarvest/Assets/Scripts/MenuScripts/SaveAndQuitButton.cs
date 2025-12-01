@@ -47,8 +47,10 @@ public class SaveAndQuitButton : MonoBehaviour
         {
             data.savedQuotaIndex = QuotaManager.Instance.GetCurrentQuotaIndex();
             data.savedTurnsRemaining = QuotaManager.Instance.GetTurnsRemaining();
+            data.savedStartingMoneyForQuota = QuotaManager.Instance.GetStartingMoney();
             Debug.Log("[SaveAndQuitButton] Saved quotaIndex=" + data.savedQuotaIndex +
-                      " turns=" + data.savedTurnsRemaining);
+              " turns=" + data.savedTurnsRemaining +
+              " startingMoneyForQuota=" + data.savedStartingMoneyForQuota);
         }
         else
         {
@@ -64,5 +66,7 @@ public class SaveAndQuitButton : MonoBehaviour
         {
             Debug.LogWarning("[SaveAndQuitButton] MoneyManager not found. Money not saved.");
         }
+
+
     }
 }
