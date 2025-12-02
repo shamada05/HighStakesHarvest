@@ -39,6 +39,13 @@ public class HotbarSystem : MonoBehaviour
             return;
         }
     }
+
+    private void Start()
+    {
+        // Ensure the first slot is treated as selected on startup so systems listening
+        // to OnSlotSelected (e.g., input handlers, UI) initialize correctly.
+        SelectSlot(currentSlot);
+    }
     
     private void Update()
     {
