@@ -414,4 +414,16 @@ public class QuotaManager : MonoBehaviour
         turnsRemaining += amount;
         OnTurnChanged?.Invoke(turnsRemaining);
     }
+
+    public void RestoreQuotaState(int quotaIndex, int turnsRemaining)
+    {
+        currentQuotaIndex = quotaIndex;
+        this.turnsRemaining = turnsRemaining;
+        isQuotaActive = true;
+
+        OnQuotaStarted?.Invoke(quotas[currentQuotaIndex]);
+        OnTurnChanged?.Invoke(turnsRemaining);
+
+        Debug.Log($"[QuotaManager] Restored quota {quotaIndex}, turns={turnsRemaining}");
+    }
 }
