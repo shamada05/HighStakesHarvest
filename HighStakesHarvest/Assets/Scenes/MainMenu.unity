@@ -1448,13 +1448,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd89bf670b0b1943a51540599ef5c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farmSceneTutorialPrefab: {fileID: 1257661519884945840, guid: 8606fb9911d278b418f01a4edc3caed5,
+  farmSceneTutorialPrefab: {fileID: 1071119164371082717, guid: 1da700941e7dde84db9a30a2aaa7b1c8,
     type: 3}
-  casinoSceneTutorialPrefab: {fileID: 1257661519884945840, guid: 8c24a36836234b44faa4b70c244c7747,
+  casinoSceneTutorialPrefab: {fileID: 2792140710541218100, guid: eb9143ab98942154695f791adea63d99,
     type: 3}
-  slotsTutorialPrefab: {fileID: 1257661519884945840, guid: dc901fb5678d7744893eb1acce5ca130,
+  slotsTutorialPrefab: {fileID: 8654299782046003119, guid: 5249ae5c145e74d4e93ed78e892f4027,
     type: 3}
-  casinoTableTutorialPrefab: {fileID: 1257661519884945840, guid: 5374ea24a61740043bd6fecabc153a99,
+  casinoTableTutorialPrefab: {fileID: 8792196154025383323, guid: f8cb6eefa076a534db45d9077149fc6d,
     type: 3}
   data:
     hasSeenStartingCutscene: 0

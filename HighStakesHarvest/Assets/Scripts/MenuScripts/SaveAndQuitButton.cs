@@ -32,6 +32,11 @@ public class SaveAndQuitButton : MonoBehaviour
             Debug.LogWarning("PauseManager not found in scene!");
         }
 
+        if (TurnManager.Instance != null)
+        {
+            TurnManager.Instance.ForceStopTurn();
+        }
+
         // Load Main Menu
         SceneManager.LoadScene("MainMenu");
     }

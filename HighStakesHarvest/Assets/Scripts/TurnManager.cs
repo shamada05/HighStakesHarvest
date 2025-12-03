@@ -393,4 +393,11 @@ public class TurnManager : MonoBehaviour
         string path = Path.Combine(Application.persistentDataPath, "turnLog.txt");
         File.AppendAllText(path, message + "\n");
     }
+
+    public void ForceStopTurn()
+    {
+        isTurnActive = false;
+        currentTurnTimeRemaining = 0;
+        Debug.Log("[TurnManager] Force-stopped turn (Save & Quit).");
+    }
 }
