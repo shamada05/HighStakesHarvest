@@ -57,9 +57,6 @@ public class CutscenePlayer : MonoBehaviour
             index++;
         }
 
-        SaveManager.Instance.data.hasSeenStartingCutscene = true;
-        SaveManager.Instance.SaveGame();
-
         SceneManager.LoadScene("FarmScene");
 
     }

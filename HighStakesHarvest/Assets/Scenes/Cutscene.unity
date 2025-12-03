@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 1859965878}
   - component: {fileID: 1859965877}
   m_Layer: 0
-  m_Name: Cutscene Player
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

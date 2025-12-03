@@ -5,9 +5,6 @@ public class SaveAndQuitButton : MonoBehaviour
 {
     public void SaveAndQuit()
     {
-        // Find the active PauseManager in the scene
-        PauseManager manager = FindObjectOfType<PauseManager>();
-
         // Ensure SaveManager exists
         if (SaveManager.Instance == null)
         {
@@ -21,16 +18,6 @@ public class SaveAndQuitButton : MonoBehaviour
         SaveManager.Instance.SaveGame();
 
         Debug.Log("[SaveAndQuitButton] Game saved. Returning to Main Menu...");
-
-        
-        if (manager != null)
-        {
-            manager.Resume();
-        }
-        else
-        {
-            Debug.LogWarning("PauseManager not found in scene!");
-        }
 
         // Load Main Menu
         SceneManager.LoadScene("MainMenu");
@@ -60,10 +47,8 @@ public class SaveAndQuitButton : MonoBehaviour
         {
             data.savedQuotaIndex = QuotaManager.Instance.GetCurrentQuotaIndex();
             data.savedTurnsRemaining = QuotaManager.Instance.GetTurnsRemaining();
-            data.savedStartingMoneyForQuota = QuotaManager.Instance.GetStartingMoney();
             Debug.Log("[SaveAndQuitButton] Saved quotaIndex=" + data.savedQuotaIndex +
-              " turns=" + data.savedTurnsRemaining +
-              " startingMoneyForQuota=" + data.savedStartingMoneyForQuota);
+                      " turns=" + data.savedTurnsRemaining);
         }
         else
         {
@@ -79,7 +64,5 @@ public class SaveAndQuitButton : MonoBehaviour
         {
             Debug.LogWarning("[SaveAndQuitButton] MoneyManager not found. Money not saved.");
         }
-
-
     }
 }

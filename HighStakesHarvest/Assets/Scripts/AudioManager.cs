@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-using System.Collections;
 
 [System.Serializable]
 public class AudioSettingsData
@@ -119,19 +118,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private IEnumerator CrossfadeCoroutine(AudioClip newClip, float fadeTime)
+    private System.Collections.IEnumerator CrossfadeCoroutine(AudioClip newClip, float fadeTime)
     {
+        float startVol = musicSource.volume;
         float t = 0f;
-
-        // Always fade from the REAL volume, not the current (mid-fade) volume
-        float startVol = savedVolume;
 
         // Fade out
         while (t < fadeTime)
         {
             t += Time.unscaledDeltaTime;
-            float v = Mathf.Lerp(startVol, 0f, t / fadeTime);
-            musicSource.volume = v;
+            musicSource.volume = Mathf.Lerp(startVol, 0f, t / fadeTime);
             yield return null;
         }
 
@@ -143,15 +139,13 @@ public class AudioManager : MonoBehaviour
         while (t < fadeTime)
         {
             t += Time.unscaledDeltaTime;
-            float v = Mathf.Lerp(0f, savedVolume, t / fadeTime);
-            musicSource.volume = v;
+            musicSource.volume = Mathf.Lerp(0f, startVol, t / fadeTime);
             yield return null;
         }
 
-        musicSource.volume = savedVolume;
+        musicSource.volume = startVol;
         fadeCoroutine = null;
     }
-
 
     // -------- Volume settings (JSON) --------
     private void LoadAudioSettings()
