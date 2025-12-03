@@ -8718,6 +8718,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -4, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -9656,8 +9666,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e0f27e53b9e81314c8c1b37884ca07d8, type: 2}
   - m_RefCount: 222
     m_Data: {fileID: 11400000, guid: 818e3a0fd4bd2ae4eb42658ce94d58c7, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: e2d49e2cd2730524fa29d9d0b411fb9b, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 34a153fe9251544469aff46d3ab3bd82, type: 2}
   - m_RefCount: 14
@@ -9691,8 +9701,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 4987319778984854180, guid: d8854d1304cc3874f9c022dbd3a7e0ea,
+      type: 3}
   - m_RefCount: 107
     m_Data: {fileID: 1159864494577512369, guid: 133bac6ad387573469d7089cad55f7ca,
       type: 3}
@@ -9733,7 +9744,7 @@ Tilemap:
     m_Data: {fileID: -7999935909234475359, guid: 057c820b7767e5d42bc88c36bca46a7d,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 428
+  - m_RefCount: 429
     m_Data:
       e00: 1
       e01: 0
@@ -9752,7 +9763,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 428
+  - m_RefCount: 429
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -9897,6 +9908,7 @@ GameObject:
   - component: {fileID: 507439361}
   - component: {fileID: 507439364}
   - component: {fileID: 507439365}
+  - component: {fileID: 507439366}
   m_Layer: 5
   m_Name: End Turn Early Button
   m_TagString: Untagged
@@ -10046,6 +10058,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &507439366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507439359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55ec76f8c17d354598c9c3d6a7259fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cliplist: {fileID: 8300000, guid: 57e04d4a707402140af5e982113bb94e, type: 3}
 --- !u!1 &547417840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10269,7 +10294,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &547673631
@@ -72129,8 +72154,8 @@ Tilemap:
   - first: {x: -9, y: 9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 24
-      m_TileSpriteIndex: 23
+      m_TileIndex: 23
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -102644,9 +102669,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: d9a0155cebfe50b4a81a264a42f02816, type: 2}
-  - m_RefCount: 24
+  - m_RefCount: 25
     m_Data: {fileID: 11400000, guid: 818e3a0fd4bd2ae4eb42658ce94d58c7, type: 2}
-  - m_RefCount: 8352
+  - m_RefCount: 8351
     m_Data: {fileID: 11400000, guid: 870a7ed4992699e48b6074e426deaaeb, type: 2}
   - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: c6ee313d4785a7f45b313b8e6bfedc58, type: 2}
@@ -102701,10 +102726,10 @@ Tilemap:
     m_Data: {fileID: 2017065685, guid: a07735877a3bd644094331b137b71878, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -1216461992, guid: a07735877a3bd644094331b137b71878, type: 3}
-  - m_RefCount: 24
+  - m_RefCount: 25
     m_Data: {fileID: -9153290457803940368, guid: 9f3ee116327e4e642a618fe8ce83ea4b,
       type: 3}
-  - m_RefCount: 8352
+  - m_RefCount: 8351
     m_Data: {fileID: -8093324950678878029, guid: 7d63a91b3f36df14aa57c637d3d45fe8,
       type: 3}
   - m_RefCount: 28
