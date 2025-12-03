@@ -28,7 +28,7 @@ public class DeckScript : MonoBehaviour
             {
                 cardValues[i] = 1;
             }
-            else if (num > 10)  // Jack, Queen, King
+            else if (num >= 10)  // Jack, Queen, King
             {
                 cardValues[i] = 10;
             }

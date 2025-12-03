@@ -25,7 +25,7 @@ public class SlotController : MonoBehaviour
     private bool resultsChecked = false;
     private bool canPull = true;
 
-    // Original prize dictionaries
+    // prize dictionaries
     private Dictionary<string, int> threeMatchPrizes = new Dictionary<string, int>()
     {
         { "Cherry", 200 },
@@ -47,7 +47,7 @@ public class SlotController : MonoBehaviour
     public class BuffTier
     {
         public string tierName;
-        public int minScore; // Minimum score needed to unlock this tier
+        public int minScore; 
         public List<ScriptableBuff> possibleBuffs = new List<ScriptableBuff>();
         [Range(0f, 1f)]
         public float dropChance = 1f; // Chance to get a buff from this tier (0-1)
@@ -102,7 +102,7 @@ public class SlotController : MonoBehaviour
 
     private void Update()
     {
-        // Add null checks
+       
         if (rows == null || rows.Length < 3) return;
         if (rows[0] == null || rows[1] == null || rows[2] == null) return;
 
@@ -126,18 +126,23 @@ public class SlotController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!moneyHandler.TryPayForSpin())
-            return;
-
         if (!canPull) return;
         if (rows == null || rows.Length < 3) return;
         if (rows[0] == null || rows[1] == null || rows[2] == null) return;
 
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped)
+        
+        if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped)
         {
-            StartCoroutine("PullHandle");
-
+            Debug.Log("Rows are still spinning! Wait for them to stop.");
+            return;
         }
+
+        
+        if (!moneyHandler.TryPayForSpin())
+            return;
+
+        
+        StartCoroutine("PullHandle");
     }
 
     private IEnumerator PullHandle()
@@ -178,7 +183,7 @@ public class SlotController : MonoBehaviour
         string slot1 = rows[1].stoppedSlot;
         string slot2 = rows[2].stoppedSlot;
 
-        // Debug to see what stopped
+        
         Debug.Log($"Results: {slot0}, {slot1}, {slot2}");
 
         prizeValue = 0;
@@ -289,7 +294,7 @@ public class SlotController : MonoBehaviour
 
                 if (roll <= tier.dropChance)
                 {
-                    // Filter out buffs that are already active (only if buffManager exists)
+                    // Filter out buffs that are already active 
                     List<ScriptableBuff> availableBuffs = new List<ScriptableBuff>();
 
                     if (buffManager != null)
@@ -348,7 +353,7 @@ public class SlotController : MonoBehaviour
         return null;
     }
 
-    // Helper method to add buff tiers in code if needed
+    // Helper method to add buff tiers in code 
     public void AddBuffTier(string tierName, int minScore, float dropChance, params ScriptableBuff[] buffs)
     {
         BuffTier newTier = new BuffTier
@@ -362,7 +367,7 @@ public class SlotController : MonoBehaviour
         buffTiers.Sort((a, b) => b.minScore.CompareTo(a.minScore));
     }
 
-    // Public getter for current score (useful for other systems)
+    // Public getter for current score 
     public int GetCurrentPrizeValue()
     {
         return prizeValue;
