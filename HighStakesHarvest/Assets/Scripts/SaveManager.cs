@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
+
 
 [System.Serializable]
 public class SaveData
@@ -15,7 +17,24 @@ public class SaveData
     public int savedMoney = 0;
     public int savedStartingMoneyForQuota = 0;
     public string inventoryJson = "";
+    public List<SavedPlant> savedPlants = new List<SavedPlant>();
 }
+
+[System.Serializable]
+public class SavedPlant
+{
+    public string cropName;
+
+    public float posX;
+    public float posY;
+
+    public int currentStage;
+    public int turnsGrown;
+    public bool needsWater;
+    public int timesHarvested;
+    public bool isOnTilledSoil;
+}
+
 
 public class SaveManager : MonoBehaviour
 {
@@ -29,6 +48,8 @@ public class SaveManager : MonoBehaviour
 
     private string savePath;
     public SaveData data;
+
+    private bool plantsLoadedThisSession = false;
 
     private void Awake()
     {
@@ -162,6 +183,8 @@ public class SaveManager : MonoBehaviour
                 Debug.LogWarning("[SaveManager] PlayerInventory not found during save.");
             }
 
+            SavePlants();
+
             // --- Write Save File ------------------------
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(savePath, json);
@@ -184,6 +207,10 @@ public class SaveManager : MonoBehaviour
         {
             case "FarmScene":
                 TryShowTutorial(ref data.farmSceneTutoSeen, farmSceneTutorialPrefab, "FarmScene");
+                if (!plantsLoadedThisSession)
+                {
+                    StartCoroutine(LoadPlantsDelayed());
+                }
                 break;
             case "CasinoScene":
                 TryShowTutorial(ref data.casinoSceneTutoSeen, casinoSceneTutorialPrefab, "CasinoScene");
@@ -283,6 +310,78 @@ public class SaveManager : MonoBehaviour
     public int GetStartingMoney()
     {
         return data.savedStartingMoneyForQuota;
+    }
+
+    public void SavePlants()
+    {
+        data.savedPlants.Clear();
+
+        if (PlantManager.Instance == null)
+            return;
+
+        foreach (GameObject p in PlantManager.Instance.Plants)
+        {
+            if (p == null) continue;
+
+            PlantGrowth pg = p.GetComponent<PlantGrowth>();
+            if (pg == null) continue;
+
+            SavedPlant sp = new SavedPlant();
+            sp.cropName = pg.seedData.cropName;
+            sp.posX = p.transform.position.x;
+            sp.posY = p.transform.position.y;
+            sp.currentStage = pg.currentStage;
+            sp.turnsGrown = pg.turnsGrown;
+            sp.needsWater = pg.needsWater;
+            sp.timesHarvested = pg.timesHarvested;
+            sp.isOnTilledSoil = pg.isOnTilledSoil;
+
+
+            data.savedPlants.Add(sp);
+        }
+
+        Debug.Log($"[SaveManager] Saved {data.savedPlants.Count} plants.");
+    }
+
+    private IEnumerator LoadPlantsDelayed()
+    {
+        // Wait until PlantManager + PlantPlacer exist
+        while (PlantManager.Instance == null)
+            yield return null;
+
+        PlantPlacer placer = null;
+        while (placer == null)
+        {
+            placer = FindObjectOfType<PlantPlacer>();
+            yield return null;
+        }
+
+        // Now restore plants
+        foreach (var sp in data.savedPlants)
+        {
+            if (!placer.seedDict.TryGetValue(sp.cropName, out GameObject prefab))
+            {
+                Debug.LogWarning($"No prefab found for saved crop '{sp.cropName}'");
+                continue;
+            }
+
+            Vector3 pos = new(sp.posX, sp.posY);
+            GameObject go = Instantiate(prefab, pos, Quaternion.identity);
+
+            PlantGrowth pg = go.GetComponent<PlantGrowth>();
+            pg.currentStage = sp.currentStage;
+            pg.turnsGrown = sp.turnsGrown;
+            pg.needsWater = sp.needsWater;
+            pg.timesHarvested = sp.timesHarvested;
+            pg.isOnTilledSoil = sp.isOnTilledSoil;
+
+
+            PlantManager.Instance.AddPlant(go);
+        }
+
+        plantsLoadedThisSession = true;
+
+        Debug.Log($"[SaveManager] Loaded {data.savedPlants.Count} plants.");
     }
 
 }
