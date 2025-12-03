@@ -5,6 +5,9 @@ public class SaveAndQuitButton : MonoBehaviour
 {
     public void SaveAndQuit()
     {
+        // Find the active PauseManager in the scene
+        PauseManager manager = FindObjectOfType<PauseManager>();
+
         // Ensure SaveManager exists
         if (SaveManager.Instance == null)
         {
@@ -18,6 +21,16 @@ public class SaveAndQuitButton : MonoBehaviour
         SaveManager.Instance.SaveGame();
 
         Debug.Log("[SaveAndQuitButton] Game saved. Returning to Main Menu...");
+
+        
+        if (manager != null)
+        {
+            manager.Resume();
+        }
+        else
+        {
+            Debug.LogWarning("PauseManager not found in scene!");
+        }
 
         // Load Main Menu
         SceneManager.LoadScene("MainMenu");

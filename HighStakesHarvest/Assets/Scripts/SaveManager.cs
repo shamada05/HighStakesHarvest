@@ -8,6 +8,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SaveData
 {
+    public bool hasSeenStartingCutscene = false;
     public int farmSceneTutoSeen = 0;
     public int casinoSceneTutoSeen = 0;
     public int slotsSceneTutoSeen = 0;

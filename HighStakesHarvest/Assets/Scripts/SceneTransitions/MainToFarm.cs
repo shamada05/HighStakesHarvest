@@ -19,7 +19,14 @@ public class MainToFarm : MonoBehaviour
         // Initialize save file before starting the game
         SaveManager.Instance.InitializeSaveFile();
 
-        // Load the first scene
-        SceneManager.LoadScene("Cutscene");
+        // If the player has already seen the opening cutscene, go straight to the farm
+        if (SaveManager.Instance.data.hasSeenStartingCutscene)
+        {
+            SceneManager.LoadScene("FarmScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("Cutscene");
+        }
     }
 }

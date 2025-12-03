@@ -1398,6 +1398,7 @@ MonoBehaviour:
   casinoTableTutorialPrefab: {fileID: 1257661519884945840, guid: 5374ea24a61740043bd6fecabc153a99,
     type: 3}
   data:
+    hasSeenStartingCutscene: 0
     farmSceneTutoSeen: 0
     casinoSceneTutoSeen: 0
     slotsSceneTutoSeen: 0
@@ -1405,7 +1406,9 @@ MonoBehaviour:
     savedQuotaIndex: 0
     savedTurnsRemaining: 0
     savedMoney: 0
+    savedStartingMoneyForQuota: 0
     inventoryJson: 
+    savedPlants: []
 --- !u!1 &699241087
 GameObject:
   m_ObjectHideFlags: 0
