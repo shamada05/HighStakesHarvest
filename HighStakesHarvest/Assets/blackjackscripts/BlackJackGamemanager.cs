@@ -183,7 +183,7 @@ public class BlackJackGameManager : MonoBehaviour
             yield break;
         }
 
-        while (dealerscript.handValue < playerscript.handValue && dealerscript.handValue < 17 && dealerscript.cardIndex < dealerscript.hand.Length)
+        while (dealerscript.handValue < 17 && dealerscript.cardIndex < dealerscript.hand.Length)
         {
             dealerscript.HitOneCard();
             UpdateUI();
