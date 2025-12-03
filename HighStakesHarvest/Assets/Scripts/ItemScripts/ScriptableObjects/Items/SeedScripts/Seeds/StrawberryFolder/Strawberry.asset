@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Strawberry
   m_EditorClassIdentifier: 
   itemName: Strawberry Seed
-  description: Plant these to grow strawberrys.
+  description: Plant these to grow strawberries.
   icon: {fileID: -1828148837, guid: 7075dbd24eae86742865e25d9ad28180, type: 3}
   stackSize: 10
   isTradeable: 1
@@ -24,7 +24,8 @@ MonoBehaviour:
   producedCrop: {fileID: 11400000, guid: d26107224e6448baacf417f13a51214b, type: 2}
   growthTime: 3
   seasonPreference: All
-  seedSprite: {fileID: 1775669009216684005, guid: 7739034256b4b2c458938e8f6f4ba3f6, type: 3}
+  seedSprite: {fileID: 1775669009216684005, guid: 7739034256b4b2c458938e8f6f4ba3f6,
+    type: 3}
   growthStages:
   - {fileID: 7738305070149883613, guid: 1e64b6fea36341bc8484665d71c3de4b, type: 3}
   - {fileID: 7738305070149883613, guid: dbaacfa9fdc64caa8a2fb626e194cefa, type: 3}

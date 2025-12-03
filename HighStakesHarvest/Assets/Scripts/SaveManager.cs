@@ -19,6 +19,7 @@ public class SaveData
     public int savedStartingMoneyForQuota = 0;
     public string inventoryJson = "";
     public List<SavedPlant> savedPlants = new List<SavedPlant>();
+    public List<SavedBuff> savedBuffs = new List<SavedBuff>();
 }
 
 [System.Serializable]
@@ -34,6 +35,14 @@ public class SavedPlant
     public bool needsWater;
     public int timesHarvested;
     public bool isOnTilledSoil;
+}
+
+[System.Serializable]
+public class SavedBuff
+{
+    public string buffId;
+    public float timeRemaining;
+    public bool isPermanent;
 }
 
 
@@ -185,6 +194,7 @@ public class SaveManager : MonoBehaviour
             }
 
             SavePlants();
+            SaveBuffs();
 
             // --- Write Save File ------------------------
             string json = JsonUtility.ToJson(data, true);
@@ -212,6 +222,7 @@ public class SaveManager : MonoBehaviour
                 {
                     StartCoroutine(LoadPlantsDelayed());
                 }
+                StartCoroutine(RestoreBuffsDelayed());
                 break;
             case "CasinoScene":
                 TryShowTutorial(ref data.casinoSceneTutoSeen, casinoSceneTutorialPrefab, "CasinoScene");
@@ -384,5 +395,55 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log($"[SaveManager] Loaded {data.savedPlants.Count} plants.");
     }
+
+    private void SaveBuffs()
+    {
+        data.savedBuffs.Clear();
+
+        if (BuffManager.Instance == null)
+            return;
+
+        foreach (var buff in BuffManager.Instance.GetActiveBuffs())
+        {
+            string id = !string.IsNullOrEmpty(buff.BuffID) ? buff.BuffID : buff.BuffName;
+
+            SavedBuff sb = new SavedBuff
+            {
+                buffId = id,
+                timeRemaining = BuffManager.Instance.GetBuffTimeRemaining(buff),
+                isPermanent = BuffManager.Instance.GetBuffTimeRemaining(buff) <= 0f
+            };
+
+            data.savedBuffs.Add(sb);
+        }
+
+        Debug.Log($"[SaveManager] Saved {data.savedBuffs.Count} active buffs.");
+    }
+
+    private IEnumerator RestoreBuffsDelayed()
+    {
+        while (BuffManager.Instance == null)
+            yield return null;
+
+        BuffManager bm = BuffManager.Instance;
+
+        foreach (var sb in data.savedBuffs)
+        {
+            ScriptableBuff buff = BuffDatabase.Instance.GetBuffById(sb.buffId);
+
+            if (buff == null)
+            {
+                Debug.LogWarning($"[SaveManager] Missing buff in database: {sb.buffId}");
+                continue;
+            }
+
+            float duration = sb.isPermanent ? -1f : sb.timeRemaining;
+            bm.AddBuff(buff, duration);
+        }
+
+        Debug.Log($"[SaveManager] Restored {data.savedBuffs.Count} buffs.");
+    }
+
+
 
 }
