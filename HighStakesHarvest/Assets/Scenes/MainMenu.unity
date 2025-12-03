@@ -456,6 +456,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247090988}
   m_CullTransparentMesh: 1
+--- !u!1 &308188661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308188662}
+  - component: {fileID: 308188663}
+  m_Layer: 0
+  m_Name: BuffDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308188662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308188661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 930066410}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308188663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308188661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe90d07b7f580647a60f954509debb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allBuffs:
+  - {fileID: 11400000, guid: d1e02c96d59639f45bf4e6f85fcd33c7, type: 2}
+  - {fileID: 11400000, guid: 56c4381059f91a4479a32e18b1cb9941, type: 2}
+  - {fileID: 11400000, guid: 69b161fadd008494b8d720eb4e9e0617, type: 2}
+  - {fileID: 11400000, guid: 59b17807b3617104bbeab7364e9fe97c, type: 2}
+  - {fileID: 11400000, guid: 78db2334fec85c243bde44d7249bdf06, type: 2}
+  - {fileID: 11400000, guid: fb278db03846cdf4080d08f149d6d1fb, type: 2}
+  - {fileID: 11400000, guid: eba4ba52e6205914aa84850773c0c16f, type: 2}
+  - {fileID: 11400000, guid: ce4e259f34ac10a44b0c2721a433245b, type: 2}
+  - {fileID: 11400000, guid: 9c8583ad6412f5d4eb8f2cc2823a14c3, type: 2}
+  - {fileID: 11400000, guid: 7eebbeed9353e9644b8c0c3f0dd8d86a, type: 2}
+  - {fileID: 11400000, guid: fc058e32647696e4f828440e97dbba2f, type: 2}
+  - {fileID: 11400000, guid: c05bd37e58e74cc4db6b62431910bce9, type: 2}
+  - {fileID: 11400000, guid: 1c9c4e22017a3e3458090b17a397bc8d, type: 2}
+  - {fileID: 11400000, guid: c1120940bbfda484eabd7f8967776361, type: 2}
 --- !u!1 &339912062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1457,7 @@ MonoBehaviour:
   casinoTableTutorialPrefab: {fileID: 1257661519884945840, guid: 5374ea24a61740043bd6fecabc153a99,
     type: 3}
   data:
+    hasSeenStartingCutscene: 0
     farmSceneTutoSeen: 0
     casinoSceneTutoSeen: 0
     slotsSceneTutoSeen: 0
@@ -1406,6 +1466,8 @@ MonoBehaviour:
     savedTurnsRemaining: 0
     savedMoney: 0
     inventoryJson: 
+    savedPlants: []
+    savedBuffs: []
 --- !u!1 &699241087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1986,7 @@ Transform:
   - {fileID: 398699151}
   - {fileID: 184726770}
   - {fileID: 769595717}
+  - {fileID: 308188662}
   - {fileID: 893378683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2547,7 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723ac494ee515904aa50d52c48ad093d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnTimeLimit: 40
+  turnTimeLimit: 45
   playerMovementScript: {fileID: 1290635812}
   currentSeason: Spring
   enableSeasons: 0
