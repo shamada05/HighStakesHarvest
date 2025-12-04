@@ -9,6 +9,7 @@ using System.Collections.Generic;
 public class SaveData
 {
     public bool hasSeenStartingCutscene = false;
+    public bool hasStartedInitialQuota = false;
     public int farmSceneTutoSeen = 0;
     public int casinoSceneTutoSeen = 0;
     public int slotsSceneTutoSeen = 0;
@@ -193,6 +194,22 @@ public class SaveManager : MonoBehaviour
             SavePlants();
             SaveBuffs();
 
+            // --- Write Save File ------------------------
+            string json = JsonUtility.ToJson(data, true);
+            File.WriteAllText(savePath, json);
+
+            Debug.Log("[SaveManager] Save file written.");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("[SaveManager] Failed to write save file: " + ex.Message);
+        }
+    }
+
+    public void SaveNewGame()
+    {
+        try
+        {
             // --- Write Save File ------------------------
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(savePath, json);
@@ -433,5 +450,32 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log($"[SaveManager] Restored {data.savedBuffs.Count} buffs.");
     }
+
+    public void ResetBeforeQuit()
+    {
+        // --- Clear plants ---
+        if (PlantManager.Instance != null)
+        {
+            foreach (var plant in PlantManager.Instance.Plants)
+            {
+                if (plant != null)
+                    Destroy(plant);
+            }
+
+            PlantManager.Instance.ClearAllPlants();
+        }
+
+        // --- Clear buffs silently ---
+        if (BuffManager.Instance != null)
+        {
+            BuffManager.Instance.ClearActiveBuffList();
+        }
+
+        // --- Ensure plants reload next session ---
+        plantsLoadedThisSession = false;
+
+        Debug.Log("[SaveManager] Reset plants and buffs before quitting.");
+    }
+
 
 }

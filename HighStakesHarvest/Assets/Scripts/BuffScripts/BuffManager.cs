@@ -212,4 +212,10 @@ public class BuffManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void ClearActiveBuffList()
+    {
+        activeBuffs.Clear();
+    }
+
 }

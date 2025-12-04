@@ -57,10 +57,23 @@ public class CutscenePlayer : MonoBehaviour
             index++;
         }
 
+        // Mark cutscene as seen
         SaveManager.Instance.data.hasSeenStartingCutscene = true;
+
+        // Run start quota ONLY for brand-new saves
+        if (!SaveManager.Instance.data.hasStartedInitialQuota)
+        {
+            Debug.Log("Starting FIRST QUOTA immediately after cutscene...");
+            QuotaManager.Instance.StartQuota(0); // Gives starting money + turns
+            SaveManager.Instance.data.hasStartedInitialQuota = true;
+        }
+
+        // Save new state
         SaveManager.Instance.SaveGame();
 
+        // Go to the farm
         SceneManager.LoadScene("FarmScene");
+
 
     }
 

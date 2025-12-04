@@ -61,4 +61,10 @@ public class PlantManager : MonoBehaviour
                 p.SetActive(show);
         }
     }
+
+    public void ClearAllPlants()
+    {
+        plants.Clear();
+    }
+
 }

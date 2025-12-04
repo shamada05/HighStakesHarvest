@@ -20,6 +20,8 @@ public class SaveAndQuitButton : MonoBehaviour
         // Write the save file to disk
         SaveManager.Instance.SaveGame();
 
+        SaveManager.Instance.ResetBeforeQuit();
+
         Debug.Log("[SaveAndQuitButton] Game saved. Returning to Main Menu...");
 
 

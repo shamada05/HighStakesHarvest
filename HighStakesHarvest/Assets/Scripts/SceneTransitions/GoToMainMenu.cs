@@ -22,22 +22,29 @@ public class GoToMainMenu : MonoBehaviour
 
     private void OnButtonClick()
     {
-        // Delete current save file
         string path = Path.Combine(Application.persistentDataPath, "saveData.json");
 
+        // Delete the old save file
         if (File.Exists(path))
         {
             File.Delete(path);
-            Debug.Log("[GoToMainMenu] Save file deleted at: " + path);
+            Debug.Log("[GoToMainMenu] Old save file deleted.");
+        }
+
+        // Create a new blank save file immediately
+        if (SaveManager.Instance != null)
+        {
+            SaveManager.Instance.data = new SaveData();  // fresh state
+            SaveManager.Instance.SaveNewGame();             // write new blank save
+            Debug.Log("[GoToMainMenu] Fresh save file created.");
         }
         else
         {
-            Debug.Log("[GoToMainMenu] No save file to delete.");
+            Debug.LogWarning("[GoToMainMenu] SaveManager not found. Couldn't create new save.");
         }
 
-        Debug.Log("[GoToMainMenu] Save reset complete.");
-
-        // Load the MainMenu scene
+        // Load Main Menu
         SceneManager.LoadScene("MainMenu");
     }
+
 }
